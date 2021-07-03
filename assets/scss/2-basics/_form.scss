@@ -1,0 +1,459 @@
+/*
+*************************************************************************
+                            FORM COMPONENTS
+*************************************************************************
+*/
+label{
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+    //
+    &.display-flex{
+        display: flex;
+        align-items: center;
+    }
+}
+//
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
+input[type="tel"],
+textarea,
+select
+{
+    position: relative;
+    background: white;
+    width: 100%;
+    padding: 10px 15px;
+    margin: 0;
+    color: $gray1;
+    border-radius: $defaulRadius;
+    border: 1px solid $borderColor;
+}
+input:disabled,
+input:read-only,
+select:disabled
+{
+    opacity: 0.5;
+}
+
+textarea{
+    resize: vertical;
+}
+select{
+    padding: 10px 10px;
+    margin: 5px 0;
+    // color: $colorPlaceholder;
+}
+
+/*
+    PLACEHOLDER
+*/
+input::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: $colorPlaceholder;
+}
+input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: $colorPlaceholder;
+}
+input:-ms-input-placeholder {
+    /* IE 10+ */
+    color: $colorPlaceholder;
+}
+input:-moz-placeholder {
+    /* Firefox 18- */
+    color: $colorPlaceholder;
+}
+
+/*
+    SELECT CUSTOM
+*/
+.arrow-down {
+    width: 0; 
+    height: 0; 
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    
+    border-top: 8px solid black;
+}
+.select-custom{
+    position: relative;
+    margin: 5px 0;
+    // width: 100%;
+    select{
+        margin: 0;
+        padding-right: 25px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+    
+    &:after{
+        position: absolute;
+        width: 0;
+        height: 0;
+        content: '';
+        top: 50%;
+        right: 15px;
+        margin-top: -3px;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid black;
+    }
+}
+
+select.bg-white{
+    select
+    {
+        background-color: #fff;
+    }
+}
+
+select.transparent{
+    background: transparent;
+    input,
+    select
+    {
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid #fff;
+    }
+}
+
+/*
+    CHECKBOX
+*/
+.container-checkbox {
+    position: relative;
+    display: block;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    //
+    &.left{
+        padding-left: 40px;
+    }
+    &.right{
+        padding-right: 25px;
+    }
+
+    /* Hide the browser's default checkbox */
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    /* Create a custom checkbox */
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: white;
+        border: 1px solid $gray1;
+    }
+
+    /* On mouse-over, add a grey background color */
+    &:hover{
+        input ~ .checkmark {
+            background-color: white;
+        }
+    }
+    /* When the checkbox is checked, add a blue background */
+    input:checked ~ .checkmark {
+        background-color: $blue;
+    }
+    /* Show the checkmark when checked */
+    input:checked ~ .checkmark:after {
+        display: block;
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+    /* Style the checkmark/indicator */
+    .checkmark:after {
+        position: absolute;
+        width: 5px;
+        height: 10px;
+        top: 50%;
+        left: 50%;
+        margin-top: -7px;
+        margin-left: -3px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        @include rotate(45deg);
+    }
+}
+
+/*
+    RADIO BUTTON
+*/
+ /* Customize the label (the container) */
+ .container-radio {
+    position: relative;
+    display: block;
+    min-height: 25px;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    // font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    /* Hide the browser's default radio button */
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    /* Create a custom radio button */
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: white;
+        border-radius: 50%;
+        border: 1px solid $gray1;
+    }
+
+    &:hover{
+        /* On mouse-over, add a grey background color */
+        input ~ .checkmark {
+            background-color: white;
+        }
+    }
+
+    /* When the radio button is checked, add a blue background */
+    input:checked ~ .checkmark {
+        background-color: $blue;
+    }
+
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    /* Show the indicator (dot/circle) when checked */
+    input:checked ~ .checkmark:after {
+        display: block;
+    }
+
+    /* Style the indicator (dot/circle) */
+    .checkmark:after {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        top: 50%;
+        left: 50%;
+        margin-top: -3px;
+        margin-left: -3px;
+        border-radius: 50%;
+        background: white;
+    } 
+}
+
+/*
+    SWITCH
+*/
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    
+
+    /* Hide default HTML checkbox */
+    input {display:none;}
+
+    /* The slider */
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: white;
+        border: 1px solid $gray1;
+
+        &:hover{
+            background-color: white;
+        }
+    }
+    
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        @include transition(300ms, transform);
+    }
+
+    input:checked + .slider {
+        background-color: $blue;
+    }
+    
+    input:focus + .slider {
+        box-shadow: none;
+    }
+    
+    input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+}
+
+.switch.round{
+    .slider{
+        border-radius: 20px;
+    }
+
+    .slider:before {
+        border-radius: 50%;
+    }
+}
+
+
+/*
+    SVG CHECKBOX
+*/
+.checkbox-svg{
+    
+    label{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        //
+        svg{
+            width: 2em;
+            stroke: $green;
+            stroke-width: 5;
+            fill: transparent;
+            //
+            .box{
+                stroke-dasharray: 320;
+                stroke-dashoffset: 0;
+                transition: stroke-dashoffset 300ms linear;
+            }
+            .check{
+                stroke-width: 8;
+                stroke-dasharray: 70;
+                stroke-dashoffset: 70;
+                transition: stroke-dashoffset 300ms linear;
+            }
+        }
+        span{
+            margin-left: 7px;
+            font-size: 16px;
+        }
+        input{
+            display: none;
+            pointer-events: none;
+            //
+            &:checked ~ svg{
+                .box{
+                    stroke-dashoffset: 320;
+                    transition: stroke-dashoffset 300ms linear;
+                }
+                .check{
+                    stroke-dashoffset: 0;
+                    transition: stroke-dashoffset 300ms linear;
+                }
+            }
+        }
+    }
+}
+
+/*
+    FORM GROUP
+*/
+.form-group{
+    position: relative;
+    margin: 10px 0;
+}
+.form-group.labels{
+    margin: 20px 0;
+}
+
+.form-group.labels:first-of-type{
+    margin-top: 0;
+}
+
+/*
+    INPUT ICON
+*/
+.input-icon{
+    position: relative;
+    //
+    .wrap{
+        position: absolute;
+        width: 40px;
+        height: calc(100% - 2px);
+        top: 1px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        //
+        i{
+            font-size: 20px;
+            color: $gray1;
+        }
+        //
+        
+    }
+    //
+    &.right{
+        input{
+            padding-right: 50px;
+        }
+        //
+        .wrap{
+            right: 1px;
+            border-left: 1px solid $borderColor;
+        }
+    }
+    //
+    &.left{
+        input{
+            padding-left: 50px;
+        }
+        //
+        .wrap{
+            left: 1px;
+            border-right: 1px solid $borderColor;
+        }
+    }
+}

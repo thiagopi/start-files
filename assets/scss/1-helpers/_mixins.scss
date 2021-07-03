@@ -1,0 +1,75 @@
+// @include display-flex(row, space-between, center);
+@mixin displayFlex($direction, $justify, $align, $wrap: false, $important: false) {
+    display: -webkit-box $important;
+    display: -moz-box $important;
+    display: -ms-flexbox $important;
+    display: -webkit-flex $important;
+    display: flex $important;
+    @if $direction !=null {
+        -webkit-flex-direction: $direction;
+        -ms-flex-direction: $direction;
+        flex-direction: $direction;
+    }
+    @if $justify !=null {
+        -webkit-justify-content: $justify;
+        -ms-justify-content: $justify;
+        justify-content: $justify;
+    }
+    @if $align !=null {
+        -webkit-align-items: $align;
+        -ms-align-items: $align;
+        align-items: $align;
+    }
+    @if $wrap {
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    } @else{
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    }
+}
+
+// @include rotate(90deg);
+@mixin rotate($val) {
+    transform: rotate($val);
+}
+// @include scale(1.1, 1.1);
+@mixin scale($w, $h){
+    transform: scale($w, $h);
+}
+
+@mixin body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    color: $gray0;
+    font-size: 16px;
+}
+
+@mixin sectionPadding {
+    padding: 50px 0;
+}
+
+// @include transition(300ms);
+@mixin transition($tempo: $transition, $tipo: all, $ease: ease-out){
+    -webkit-transition: $tipo $tempo $ease;
+    -moz-transition: $tipo $tempo $ease;
+    -ms-transition: $tipo $tempo $ease;
+    -o-transition: $tipo $tempo $ease;
+    transition: $tipo $tempo $ease;
+}
+
+@mixin p {
+    &:first-of-type {
+        margin-top: 0;
+    }
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}

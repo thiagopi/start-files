@@ -1,0 +1,210 @@
+* {
+    box-sizing: border-box !important;
+    outline: none !important;
+}
+
+div{
+    position: relative;
+}
+
+/**
+*   Define Semantic Elements as Block Elements
+*/
+header, section, footer, aside, nav, main, article, figure {
+    position: relative;
+    display: block;
+}
+
+/**
+* Remove the border on images inside links in IE 10.
+*/
+
+img {
+    border-style: none;
+}
+
+picture, figure {
+    position: relative;
+    margin: 0;
+    //
+    img {
+        display: block;
+    }
+    //
+    &.full {
+        width: 100%;
+        height: auto;
+        //
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+/*
+    Margins
+*/
+.nm {
+    margin: 0 !important;
+}
+.nmt {
+    margin-top: 0 !important;
+}
+.nmr {
+    margin-right: 0 !important;
+}
+.nmb {
+    margin-bottom: 0 !important;
+}
+.nml {
+    margin-left: 0 !important;
+}
+/*
+    Borders
+*/
+.nbt {
+    border-top: 0 !important;
+}
+.nbr {
+    border-right: 0 !important;
+}
+.nbb {
+    border-bottom: 0 !important;
+}
+.nbl {
+    border-left: 0 !important;
+}
+
+/*
+    Aligns
+*/
+.txt_center{
+    text-align: center;
+}
+/*
+    Sizes
+*/
+.width-full{
+    width: 100% !important;
+}
+.width-auto{
+    width: auto;
+
+    input{
+        width: auto;
+    }
+}
+.width-40{
+    width: 40px;
+}
+.width-65{
+    width: 65px;
+}
+.width-100{
+    width: 100px;
+}
+.width-120{
+    width: 120px;
+}
+.width-130{
+    width: 130px;
+}
+.width-150{
+    width: 150px;
+}
+.width-165{
+    width: 165px;
+}
+.width-250{
+    width: 250px;
+}
+
+/*
+    DISPLAY
+*/
+.display_none{
+    display: none !important;
+}
+.display_block{
+    display: block !important;
+}
+
+
+.overflow_hidden{
+    overflow: hidden;
+}
+
+/*
+    BACKGROUND COLORS
+*/
+.bg_purple{
+    background-color: $purple !important;
+}
+.bg_yellow{
+    background-color: $yellow !important;
+}
+.bg_blue{
+    background-color: $blue !important;
+}
+.bg_green{
+    background-color: $green !important;
+}
+.bg_red{
+    background-color: $red !important;
+}
+.bg_white{
+    background-color: #fff;
+}
+
+/*
+    TEXT COLORS
+*/
+.txt_purple{
+    color: $purple !important;
+}
+.txt_yellow{
+    color: $yellow !important;
+}
+.txt_blue{
+    color: $blue !important;
+}
+.txt_green{
+    color: $green !important;
+}
+.txt_red{
+    color: $red !important;
+}
+.txt_beige{
+    color: $beige !important;
+}
+
+
+/**
+* CONTENT
+*/
+.content_out{
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+.content_in {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+    //
+    @media (min-width: 768px) {
+        max-width: 768px;
+    }
+    @media (min-width: 960px) {
+        max-width: 960px;
+    }
+    @media (min-width: 1200px) {
+        max-width: 1200px;
+    }
+}

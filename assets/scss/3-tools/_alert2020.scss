@@ -1,0 +1,121 @@
+.alert {
+    position: fixed;
+    // display: none;
+    width: 100%;
+    top: 0;
+    right: 0;
+    // margin-right: -150px;
+    padding: 25px;
+    background: $gray3;
+    color: #fff;
+    text-align: center;
+    z-index: 0;
+    @include transition(300ms, all);
+    transform: translateX(100vw);
+
+    @media screen and (min-width:768px){
+        max-width: 400px;
+    }
+    //
+    &.active {
+        transform: translateX(0);
+        z-index: 100000;
+    }
+    &.error {
+        background-color: $red;
+    }
+    &.success {
+        background-color: $green;
+    }
+    &.warning {
+        background-color: $orange;
+    }
+    //
+    h3 {
+        text-align: left;
+        font-size: 15px;
+        font-weight: normal;
+        margin: 0;
+        //
+        span{
+            font-size: 12px;
+            font-weight: normal;
+        }
+    }
+    //
+    .btn-close {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        top: 0;
+        right: 0;
+        content: "X";
+        color: #fff;
+        font-size: 10px;
+        cursor: pointer;
+        // border: 1px solid #fff;
+        border-radius: 50%;
+        @include displayFlex(column, center, center);
+    }
+}
+
+/*
+    *************************************************************************
+                                INLINE ALERTS
+    *************************************************************************
+*/
+.inline-alert{
+    position: relative;
+    display: none;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px 15px;
+    border: 1px solid $gray0;
+    border-top-width: 5px;
+    border-radius: $defaulRadius;
+    @include transition(300ms);
+    color: $gray0;
+    //
+    &.active{
+        display: block;
+    }
+    //
+    &.success{
+        background-color: rgba($color: $green, $alpha: 0.3);
+        border-color: $green;
+        color: white;
+    }
+    &.warning{
+        background-color: rgba($color: $orange, $alpha: 0.3);
+        border-color: $orange;
+        color: $orange;
+    }
+    &.error{
+        background-color: rgba($color: $red, $alpha: 0.3);
+        border-color: $red;
+        color: $red;
+    }
+    //
+    &.with-button{
+        input{
+            padding-right: 50px;
+        }
+        //
+        .btn-close{
+            position: absolute;
+            width: 40px;
+            height: 100%;
+            top: 0px;
+            right: 0px;
+            border: 0;
+            cursor: pointer;
+            @include displayFlex(column, center, center);
+            font-size: 17px;
+        }
+    }
+    //
+    &.remove{
+        visibility: hidden;
+        opacity: 0;
+    }
+}

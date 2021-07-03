@@ -1,0 +1,22 @@
+// 1 - HELPERS
+@import './1-helpers/variables';
+@import './1-helpers/mixins';
+// @import './1-helpers/_functions';
+
+// 2 - BASICS
+@import './2-basics/normalize';
+@import './2-basics/base';
+@import './2-basics/links';
+@import './2-basics/form';
+@import './2-basics/video';
+@import './2-basics/buttons';
+
+body {
+    @include body;
+    background-color: $blue;
+    color: white;
+}
+
+h1 {
+    font-family: sans-serif;
+}
