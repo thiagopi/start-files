@@ -1,4 +1,7 @@
-# Initial files to start a new project
+# Rock2You
+
+## v0.1.0 - 2021-10-05
+* Fist commit  
 
 ## First thing first
 

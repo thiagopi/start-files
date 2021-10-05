@@ -11,12 +11,32 @@
 @import './2-basics/video';
 @import './2-basics/buttons';
 
+// 6 - PAGES
+@import './5-modules/header';
+@import './5-modules/hero';
+@import './5-modules/help-you';
+@import './5-modules/begin';
+@import './5-modules/faq';
+@import './5-modules/contact';
+@import './5-modules/footer';
+
 body {
     @include body;
-    background-color: $blue;
-    color: white;
+    background-color: white;
+    color: $gray0;
+    font-family: 'Raleway', sans-serif;
 }
 
-h1 {
-    font-family: sans-serif;
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-weight: 900;
+}
+
+p {
+    &:first-of-type {
+        margin-top: 0;
+    }
+    &:last-of-type {
+        margin-bottom: 0;
+    }
 }

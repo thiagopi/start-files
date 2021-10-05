@@ -4,11 +4,244 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic HTML</title>
-    <link rel="stylesheet" href="assets/css/main.css">
+    <title>Rock2You</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <script type="text/javascript" src="assets/js/app.min.js" defer></script>
 </head>
 <body>
-    <h1>Thiago Pereira</h1>
-    <script type="module" src="assets/js/app.min.js" type="text/javascript"></script>
+    <header id="header" class="content-out">
+        <div class="content-in">
+            <figure class="logo-rock2you">
+                <img src="./assets/images/logo-rock2you.svg" alt="">
+            </figure>
+
+            <nav class="main-menu">
+                <button class="btn-menu" onclick="goCont('#help-you')">Benefícios</button>
+                <button class="btn-menu" onclick="goCont('#begin')">Como Funciona</button>
+                <button class="btn-menu" onclick="goCont('#faq')">Perguntas Frequentes</button>
+                <button class="btn-menu" onclick="goCont('#contact')">Fale Conosco</button>
+            </nav>
+        </div>
+
+        <div class="btn-open-menu"><div class="hamburger"></div></div>
+        
+    </header>
+
+    <section id="hero" class="content-out">
+        <div class="content-in">
+            <div class="wrapper">
+                <h1>
+                    Aumente o número de vendas do seu negócio!
+                </h1>
+    
+                <h2>
+                    No primeiro marketplace de rock’n roll do Brasil.
+                </h2>
+    
+                <button class="btn btn-blue" onclick="goCont('#contact')">Cadastre agora</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="help-you" class="content-out">
+        <div class="content-in">
+            <h2>O Rock2You, te ajuda
+                com as vendas
+                online.</h2>
+
+            <div class="services">
+                <div class="service">
+                    <figure>
+                        <img src="./assets/images/icons/zero_icon.svg" alt="" width="70px" height="70px">
+                    </figure>
+                    <h3>Zero Investimento:</h3>
+                    <p>
+                        Ganhe mais um canal de vendas e pague apenas uma comissão de 15% por venda realizada.
+                    </p>
+                </div>
+                <div class="service">
+                    <figure>
+                        <img src="./assets/images/icons/visibilidade_icon.svg" alt="" width="70px" height="70px">
+                    </figure>
+                    <h3>Mais visibilidade:</h3>
+                    <p>
+                        Você alcançará clientes de todo o país e irá alavancar suas vendas, com nosso marketing trabalhando para você.
+                    </p>
+                </div>
+                <div class="service">
+                    <figure>
+                        <img src="./assets/images/icons/loja_icon.svg" alt="" width="70px" height="70px">
+                    </figure>
+                    <h3>Loja personalizada:</h3>
+                    <p>
+                        Cada uma das lojas cadastradas no Rock2You, possui um endereço de URL personalizado que pode ser divulgado em outros canais de comunicação.
+                    </p>
+                </div>
+
+                <div class="service">
+                    <figure>
+                        <img src="./assets/images/icons/variedade_icon.svg" alt="" width="70px" height="70px">
+                    </figure>
+                    <h3>Variedade de categorias:</h3>
+                    <p>
+                        Inclua diversos tipos de produtos, como: decoração, instrumentos, livros, vestuários e até mesmo serviços.
+                    </p>
+                </div>
+                <div class="service">
+                    <figure>
+                        <img src="./assets/images/icons/dados_icon.svg" alt="" width="70px" height="70px">
+                    </figure>
+                    <h3>Dados do seu negócio em tempo real:</h3>
+                    <p>
+                        Os indicadores da sua loja em tempo real e na palma da sua mão.
+                    </p>
+                </div>
+                <div class="service">
+                    <figure>
+                        <img src="./assets/images/icons/pagamento_icon.svg" alt="" width="70px" height="70px">
+                    </figure>
+                    <h3>Pagamento integral:</h3>
+                    <p>
+                        Seus clientes podem parcelar as compras, mas você tem a opção de receber o valor total de uma só vez.
+                    </p>
+                </div>
+
+                <div class="service">
+                    <figure>
+                        <img src="./assets/images/icons/conte_icon.svg" alt="" width="70px" height="70px">
+                    </figure>
+                    <h3>Conte com nosso atendimento:</h3>
+                    <p>
+                        O atendimento ao seu cliente, é feito pelo nosso SAC, de forma personalizada e humanizada.
+                    </p>
+                </div>
+                <div class="service">
+                    <figure>
+                        <img src="./assets/images/icons/plataforma_icon.svg" alt="" width="70px" height="70px">
+                    </figure>
+                    <h3>Plataforma segura, estável e descomplicada:</h3>
+                    <p>
+                        Conte com a nossa infraestrutura para vender online, desde o marketing, suporte, sistema antifraude até a integração com os Correios. E tudo já incluso na comissão paga a plataforma.
+                    </p>
+                </div>
+
+            </div>
+
+            <button class="btn btn-blue" onclick="goCont('#contact')">Cadastre agora</button>
+        </div>
+
+    </section>
+
+    <section id="begin" class="content-out">
+        <div class="content-in">
+            <h2>Como começar</h2>
+
+            <div class="steps">
+                <div class="step">
+                    <figure>
+                        <img src="./assets/images/begin/comecar1.svg" alt="" width="170" height="170">
+                        <figcaption>Confira o nosso conteúdo</figcaption>
+                    </figure>
+                    <!-- <div class="number">1</div> -->
+                </div>
+                <div class="step">
+                    <figure>
+                        <img src="./assets/images/begin/comecar2.svg" alt="" width="170" height="170">
+                        <figcaption>Cadastre a sua loja e produtos</figcaption>
+                    </figure>
+                    <!-- <div class="number">2</div> -->
+                </div>
+                <div class="step">
+                    <figure>
+                        <img src="./assets/images/begin/comecar3.svg" alt="" width="170" height="170">
+                        <figcaption>O Rock2You vende para você</figcaption>
+                    </figure>
+                    <!-- <div class="number">3</div> -->
+                </div>
+                <div class="step">
+                    <figure>
+                        <img src="./assets/images/begin/comecar4.svg" alt="" width="170" height="170">
+                        <figcaption>Você recebe o seu dinheiro</figcaption>
+                    </figure>
+                    <!-- <div class="number">4</div> -->
+                </div>
+            </div>
+
+            <div class="video">
+                <div class="video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/muZbNjnr-qI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="content-out">
+        <div class="content-in">
+            <h2>Perguntas Frequentes</h2>
+
+            <div class="qa">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi, repellat. Quia ipsa consequatur ut atque ex aspernatur quaerat praesentium repellat quod rerum fugit, rem nesciunt, modi iste voluptatibus totam voluptas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="content-out">
+        <div class="content-in">
+            <div class="cols2">
+                <div class="col left">
+                    <figure class="logo-rock2you full">
+                        <img src="./assets/images/logo-rock2you.svg" alt="">
+                    </figure>
+
+                    <h2>Quer vender no nosso marketplace?<br>Fale com o nosso time!</h2>
+
+                    <h3>Caso prefira, ligue para nós: <a href="tel:1135645484">(11) 3564-5484</a></h3>
+
+                    <div class="social">
+                        <a href="#"><img src="./assets/images/icons/icon-facebook.svg" alt="Facebook" width="40" height="40"></a>
+                        <a href="#"><img src="./assets/images/icons/icon-instagram.svg" alt="Instagram" width="40" height="40"></a>
+                    </div>
+                </div>
+
+                <div class="col right">
+                    <form name="formContact">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Nome do responsável:">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="company" placeholder="Empresa:">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="E-mail:">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Telefone:">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="activity" placeholder="Ramo de atividade:">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" rows="3" placeholder="Mensagem:"></textarea>
+                        </div>
+
+                        <button class="btn btn-blue">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="content-out">
+        <div class="content-in">
+            <p>Rock2You Ltda. Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    
 </body>
 </html>

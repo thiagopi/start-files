@@ -1,0 +1,63 @@
+#contact {
+    padding-block: 40px;
+    background-color: $blue;
+
+    .logo-rock2you {
+        width: 267px;
+    }
+
+    .cols2 {
+        display: grid;
+        gap: 32px;
+
+        @media screen and (min-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .left {
+        h2 {
+            max-width: 370px;
+            margin-block: 48px 32px;
+            color: white;
+            font-size: clamp(25px, 6vw, 33px);
+        }
+    
+        h3 {
+            max-width: 340px;
+            margin-bottom: 56px;
+            color: white;
+            font-size: 22px;
+    
+            a {
+                color: white;
+            }
+        }
+    
+        .social {
+            display: flex;
+    
+            a {
+                display: block;
+    
+                &:not(:last-of-type) {
+                    margin-right: 32px;
+                }
+            }
+        }
+    }
+
+    .right {
+        form {
+            padding: 32px;
+            background-color: white;
+            border-radius: 15px;
+
+            .btn {
+                margin-top: 32px;
+                margin-inline: auto;
+            }
+        }
+    }
+
+}

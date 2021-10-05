@@ -26,13 +26,14 @@ textarea,
 select
 {
     position: relative;
-    background: white;
+    background: transparent;
     width: 100%;
-    padding: 10px 15px;
+    padding: 10px 0;
     margin: 0;
-    color: $gray1;
-    border-radius: $defaulRadius;
-    border: 1px solid $borderColor;
+    color: $gray0;
+    // border-radius: $defaulRadius;
+    border: 0;
+    border-bottom: 1px solid $borderColor;
 }
 input:disabled,
 input:read-only,
@@ -402,6 +403,13 @@ select.transparent{
 .form-group{
     position: relative;
     margin: 10px 0;
+
+    &:first-of-type {
+        margin-top: 0;
+    }
+    &:last-of-type {
+        margin-bottom: 0;
+    }
 }
 .form-group.labels{
     margin: 20px 0;

@@ -17,7 +17,7 @@ function style() {
         // 2. pass that file through sass compiler
         .pipe(sass().on('error', sass.logError))
         // 3. store all SCSS files into a single CSS file
-        // .pipe(concatCss('style.min.css'))
+        .pipe(concatCss('style.css'))
         .pipe(sourcemaps.write('.'))
         // 4. where do I save the compiled CSS
         .pipe(gulp.dest('./assets/css/'))
@@ -69,7 +69,7 @@ function watch() {
     });
 
     // gulp.watch('./assets/scss/**/*.scss', style);
-    gulp.watch('./assets/scss/**/*.scss', gulp.series('style', 'removeMinifies', 'minifyCss'));
+    gulp.watch('./assets/scss/**/*.scss', gulp.series('style', 'removeMinifies', 'minifyCss')).on('change', browserSync.reload);
     gulp.watch('./**/*.html').on('change', browserSync.reload);
     gulp.watch('./assets/scripts/**/*.js', minifyJs).on('change', browserSync.reload);
 }

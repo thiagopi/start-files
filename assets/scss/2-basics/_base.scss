@@ -179,20 +179,18 @@ picture, figure {
 .txt_red{
     color: $red !important;
 }
-.txt_beige{
-    color: $beige !important;
-}
 
 
 /**
 * CONTENT
 */
-.content_out{
+.content-out{
     position: relative;
     max-width: 100%;
-    overflow: hidden;
+    width: 100%;
+    // overflow: hidden;
 }
-.content_in {
+.content-in {
     position: relative;
     width: 100%;
     margin: 0 auto;

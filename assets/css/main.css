@@ -434,7 +434,7 @@ picture, figure {
   background-color: #FEC171 !important; }
 
 .bg_blue {
-  background-color: #747cbb !important; }
+  background-color: #145A93 !important; }
 
 .bg_green {
   background-color: #30B08F !important; }
@@ -455,7 +455,7 @@ picture, figure {
   color: #FEC171 !important; }
 
 .txt_blue {
-  color: #747cbb !important; }
+  color: #145A93 !important; }
 
 .txt_green {
   color: #30B08F !important; }
@@ -469,29 +469,29 @@ picture, figure {
 /**
 * CONTENT
 */
-.content_out {
+.content-out {
   position: relative;
   max-width: 100%;
-  overflow: hidden; }
+  width: 100%; }
 
-.content_in {
+.content-in {
   position: relative;
   width: 100%;
   margin: 0 auto;
   padding: 15px; }
   @media (min-width: 768px) {
-    .content_in {
+    .content-in {
       max-width: 768px; } }
   @media (min-width: 960px) {
-    .content_in {
+    .content-in {
       max-width: 960px; } }
   @media (min-width: 1200px) {
-    .content_in {
+    .content-in {
       max-width: 1200px; } }
 
 a {
   text-decoration: none;
-  color: #747cbb; }
+  color: #145A93; }
 
 /*
 *************************************************************************
@@ -640,7 +640,7 @@ select.transparent {
   .container-checkbox:hover input ~ .checkmark {
     background-color: white; }
   .container-checkbox input:checked ~ .checkmark {
-    background-color: #747cbb; }
+    background-color: #145A93; }
   .container-checkbox input:checked ~ .checkmark:after {
     display: block; }
   .container-checkbox .checkmark:after {
@@ -700,7 +700,7 @@ select.transparent {
     .container-radio:hover input ~ .checkmark {
       background-color: white; }
   .container-radio input:checked ~ .checkmark {
-    background-color: #747cbb; }
+    background-color: #145A93; }
   .container-radio .checkmark:after {
     content: "";
     position: absolute;
@@ -755,7 +755,7 @@ select.transparent {
     -o-transition: transform 300ms ease-out;
     transition: transform 300ms ease-out; }
   .switch input:checked + .slider {
-    background-color: #747cbb; }
+    background-color: #145A93; }
   .switch input:focus + .slider {
     box-shadow: none; }
   .switch input:checked + .slider:before {
@@ -865,24 +865,36 @@ button {
   all: unset; }
   button.btn {
     position: relative;
-    display: inline-block;
-    padding: 10px 25px;
+    display: block;
+    width: max-content;
+    padding: 8px 16px;
     border: 0;
+    border-radius: 8px;
     color: #fff;
-    font-weight: normal;
+    font-weight: 700;
     text-align: center;
+    text-transform: uppercase;
     overflow: hidden;
-    cursor: pointer; }
-    button.btn.blue {
-      background: #747cbb;
-      border: 1px solid #747cbb; }
+    cursor: pointer;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3); }
+    button.btn::before {
+      content: '';
+      position: absolute;
+      top: -31px;
+      left: -42px;
+      width: calc(100% + 50px);
+      height: 40px;
+      border-radius: 40%;
+      background-color: rgba(255, 255, 255, 0.3); }
+    button.btn.btn-blue {
+      background: linear-gradient(135deg, #0067AA, #67A1C4); }
     button.btn.outline {
       border: 1px solid #4d4d4d;
       color: #4d4d4d; }
     button.btn.blue.outline {
-      border-color: #747cbb;
+      border-color: #145A93;
       background: transparent;
-      color: #747cbb; }
+      color: #145A93; }
     button.btn.ghost {
       position: absolute;
       display: block;
@@ -1111,19 +1123,70 @@ button {
       margin: 0; }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  max-width: 100%;
   margin: 0;
   overflow-x: hidden;
   color: #4d4d4d;
   font-size: 16px;
-  background-color: #747cbb;
-  color: white; }
+  background-color: white;
+  color: white;
+  font-family: 'Raleway', sans-serif; }
 
 h1 {
   font-family: sans-serif; }
+
+/* *************************************************
+                        HEADER
+************************************************* */
+#header {
+  background: linear-gradient(90deg, #145A93, #131D27); }
+  #header .content-in {
+    display: grid;
+    place-items: center;
+    gap: 16px; }
+    @media screen and (min-width: 768px) {
+      #header .content-in {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; } }
+    #header .content-in nav.main-menu {
+      display: flex; }
+      #header .content-in nav.main-menu .btn-menu {
+        position: relative;
+        cursor: pointer; }
+        #header .content-in nav.main-menu .btn-menu:not(:last-of-type) {
+          margin-right: 32px; }
+        @media screen and (min-width: 768px) {
+          #header .content-in nav.main-menu .btn-menu:not(:first-of-type)::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -16px;
+            width: 1px;
+            height: 100%;
+            background: white; } }
+
+/* *************************************************
+                        HERO
+************************************************* */
+#hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: url("../images/hero.png") no-repeat center right;
+  background-size: cover;
+  height: 300px; }
+  #hero .wrapper {
+    max-width: 250px; }
+    #hero .wrapper h1 {
+      margin-top: 0;
+      padding: 8px;
+      border-top: 2px solid #145A93;
+      border-bottom: 2px solid #145A93;
+      color: #145A93;
+      font-size: 26px; }
+    #hero .wrapper h2 {
+      color: #373435;
+      font-size: 18px;
+      font-weight: 800; }
 
 /*# sourceMappingURL=main.css.map */

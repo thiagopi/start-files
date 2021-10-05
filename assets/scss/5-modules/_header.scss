@@ -1,0 +1,157 @@
+/* *************************************************
+                        HEADER
+************************************************* */
+#header {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(90deg, $blue, #131D27);
+    z-index: 5;
+
+    .content-in {
+        display: grid;
+        place-items: center;
+        gap: 16px;
+
+        @media screen and (min-width: 768px) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-rock2you {
+            img {
+                width: 150px;
+                height: auto;
+            }
+        }
+
+        nav.main-menu {
+            display: flex;
+            overflow: hidden;
+            transition: 300ms all ease-in-out;
+            
+            @media screen and (max-width: 500px) {
+                width: 100%;
+                max-height: 0;
+                flex-direction: column;
+                // transform: translateX(-100vw);
+
+                // &.active {
+                //     transform: translateX(0);
+                // }
+            }
+
+            .btn-menu {
+                position: relative;
+                cursor: pointer;
+                color: white;
+
+                &:not(:last-of-type) {
+                    margin-right: 32px;
+                }
+
+                @media screen and (max-width: 500px) {
+                    padding-block: 8px;
+                    font-size: 20px;
+                }
+
+                @media screen and (min-width: 768px) {
+                    &:not(:first-of-type) {
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: -16px;
+                            width: 1px;
+                            height: 100%;
+                            background: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // controll menu on active
+    @media screen and (max-width: 500px) {
+        .content-in {
+            gap: 0;
+        }
+        &.active {
+            .content-in {
+                gap: 16px;
+                
+                nav.main-menu {
+                    max-height: 10000px;
+                    height: calc(100vh - 60px);
+                }
+            }
+        }
+    }
+
+
+    .btn-open-menu {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        top: 10px;
+        right: 15px;
+        cursor: pointer;
+        @include transition(300ms);
+        z-index: 2;
+        //
+        @media screen and (min-width: 500px) {
+            display: none;
+        }
+        //
+        .hamburger {
+            width: 22px;
+            height: 6px;
+            background-color: white;
+            border-radius: 6px;
+            @include transition(300ms);
+            //
+            &::before,
+            &::after {
+                position: absolute;
+                display: block;
+                content: '';
+                width: 30px;
+                height: 6px;
+                background-color: white;
+                border-radius: 6px;
+                @include transition(300ms);
+                transform-origin: 50% 50%;
+            }
+            &::before {
+                width: 15px;
+                transform: translateY(-10px);
+            }
+            &::after {
+                transform: translateY(10px);
+            }
+        }
+        //
+        &.active {
+            .hamburger {
+                // transform: translateY(-30px);
+                background-color: transparent;
+                //
+                &::before {
+                    width: 30px;
+                    transform: rotate(45deg);
+                    
+                }
+                //
+                &::after {
+                    width: 30px;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+    
+}
